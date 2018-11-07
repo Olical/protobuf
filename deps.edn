@@ -1,0 +1,6 @@
+{:deps
+ {org.clojure/clojure {:mvn/version "1.9.0"}
+  com.google.protobuf/protobuf-java {:mvn/version "3.6.0"}
+  gloss {:mvn/version "0.2.6"}
+  org.flatland/io {:mvn/version "0.3.0"}}
+ :paths ["src/clj" "src/java"]}
