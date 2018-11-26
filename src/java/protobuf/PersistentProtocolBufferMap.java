@@ -148,7 +148,7 @@ public class PersistentProtocolBufferMap extends APersistentMap implements IObj 
           }
           return enumMappingsByProtoName.get(fieldDescriptor).get(name);
         }
-        return  Keyword.intern(name.replaceAll("_", "-").toLowerCase());
+        return  Keyword.intern(name.replaceAll("_", "-"));
       }
 
       @Override
