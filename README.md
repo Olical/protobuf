@@ -132,6 +132,7 @@ previous reference documentation, visit the
 
 | Version             | Notes
 |---------------------|------------------------------------------------------
+| 3.6.1-v1.0-SNAPSHOT | Adds additional Persistent Map behaviours: `assoc-in`, `update-in`, `merge` and `merge-with` to `protobuf.impl.flatland.core.FlatlandProtoBuf` and `protobuf.PersistentProtocolBufferMap` allowing users to work with constructed objects as if they were normal maps. Also resolves [Issue #41](https://github.com/clojusc/protobuf/issues/41)
 | 3.6.0-v1.2-SNAPSHOT | Bumped to latest release of protobuf-java (see the branch [release/1.2.x](https://github.com/clojusc/protobuf/tree/release/1.2.x)), added byte and stream support in constructors, added benchmarking
 | 3.5.1-v1.1          | Added docs, more func renames, new abstraction layer, improved DevEx of API, and fix for enums as Clojure keywords
 | 3.5.1-v1.0          | Droped extra deps, renamed functions
