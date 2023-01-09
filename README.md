@@ -1,5 +1,7 @@
 # protobuf
 
+> Warning! This doesn't build! I might come back to it eventually but this fork is useless right now. The goal is to merge a bunch of forks together and publish their works on clojars so everyone can access their improvements. It's not there yet.
+
 [![Build Status][travis-badge]][travis][![Clojars Project][clojars-badge]][clojars][![Releases][tag-badge]][tag][![Clojure version][clojure-v]](project.clj)
 
 *A Clojure interface to Google's protocol buffers*
