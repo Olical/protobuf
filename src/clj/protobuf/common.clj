@@ -56,3 +56,17 @@
 
 (def seqable-behaviour
   {:seq (fn [this] (.seq (get-instance this)))})
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   Additional Map Behaviours   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def additional-persistent-map-behaviours
+  {:assoc-in (fn [protobuf-object ks v]
+               (assoc-in protobuf-object ks v))
+   :update-in (fn [protobuf-object ks fn]
+                (update-in protobuf-object ks fn))
+   :merge (fn [& protobuf-objects]
+            (merge (first protobuf-objects)))
+   :merge-with (fn [fn & protobuf-objects]
+                 (merge-with fn (first protobuf-objects)))})

@@ -4,8 +4,16 @@
     [protobuf.common :as common]
     [protobuf.impl.flatland.core :as flatland])
   (:import
-    (protobuf.impl.flatland.core FlatlandProtoBuf))
-  (:refer-clojure :exclude [map? read]))
+    (protobuf.impl.flatland.core FlatlandProtoBuf)
+    (protobuf PersistentProtocolBufferMap))
+  (:refer-clojure :exclude [map? read assoc-in update-in merge merge-with]))
+
+(defprotocol AdditionalPersistentMapAPI
+  (assoc-in [protobuf-object ks v])
+  (update-in [protobuf-object ks fn])
+  (merge [& protobuf-objects])
+  (merge-with [fn & protobuf-objects]))
+
 
 (defprotocol ProtoBufCommonAPI
   (get-class [this])
@@ -27,6 +35,14 @@
 (extend FlatlandProtoBuf
   ProtoBufAPI
   flatland/behaviour)
+
+(extend FlatlandProtoBuf
+  AdditionalPersistentMapAPI
+  common/additional-persistent-map-behaviours)
+
+(extend PersistentProtocolBufferMap
+  AdditionalPersistentMapAPI
+  common/additional-persistent-map-behaviours)
 
 (def default-impl-name "flatland")
 
@@ -71,6 +87,4 @@
   Person3
   (def protobuf-class Person3)
   (def data {:id 7 :name "Test Person"})
-  (def impl-key :flatland)
-
-  ())
+  (def impl-key :flatland))
