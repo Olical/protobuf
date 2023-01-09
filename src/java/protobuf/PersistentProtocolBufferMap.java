@@ -148,7 +148,7 @@ public class PersistentProtocolBufferMap extends APersistentMap implements IObj 
           }
           return enumMappingsByProtoName.get(fieldDescriptor).get(name);
         }
-        return  Keyword.intern(name.replaceAll("_", "-").toLowerCase());
+        return  Keyword.intern(name.replaceAll("_", "-"));
       }
 
       @Override
@@ -751,7 +751,7 @@ public class PersistentProtocolBufferMap extends APersistentMap implements IObj 
     } else if (field.isRepeated()) {
       return message().getRepeatedFieldCount(field) > 0;
     } else {
-      return message().hasField(field) || field.hasDefaultValue();
+        return message().hasField(field) || field.hasDefaultValue() || field.getJavaType() == Descriptors.FieldDescriptor.JavaType.ENUM;
     }
   }
 
@@ -781,6 +781,10 @@ public class PersistentProtocolBufferMap extends APersistentMap implements IObj 
   public Object getValAt(Object key, Object notFound, boolean use_extensions) {
     Descriptors.FieldDescriptor field = def.fieldDescriptor(key);
     if (protoContainsKey(key)) {
+        if(!field.isRepeated() && !message().hasField(field) && (field.hasDefaultValue() || field.getJavaType() == Descriptors.FieldDescriptor.JavaType.ENUM)) {
+            return fromProtoValue(field, field.getDefaultValue(), use_extensions);
+        }
+
       return fromProtoValue(field, message().getField(field), use_extensions);
     } else {
       return RT.get(ext, key, notFound);
