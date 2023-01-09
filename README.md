@@ -26,9 +26,13 @@ faster to serialize and deserialize than standard Clojure objects.
 
 ## Changes in this Fork
 
+> Olical: This is just my attempt at merging together various forks to get all of the benefits in one pre-built package.
+
 Changes in Protocol Buffer's "syntax3" require some changes in the library to correct 'bug's:
 
 1. [mapdef.clj](src/clj/protobuf/impl/flatland/mapdef.clj) was failing at line 39 due to changes in the protobuf Java implementation. Specifically, messages are `Descriptors$FileDescriptor`, not the `Descriptors$Descriptor` required.
+2. Add additional persistent map behaviours
+3. Add support for default values
 
 
 ## Using Leiningen
@@ -154,14 +158,14 @@ previous reference documentation, visit the
 
 ## Release Notes
 
-| Version             | Notes
-|---------------------|------------------------------------------------------
-| 3.6.1-v1.0-SNAPSHOT | Adds additional Persistent Map behaviours: `assoc-in`, `update-in`, `merge` and `merge-with` to `protobuf.impl.flatland.core.FlatlandProtoBuf` and `protobuf.PersistentProtocolBufferMap` allowing users to work with constructed objects as if they were normal maps. Also resolves [Issue #41](https://github.com/clojusc/protobuf/issues/41)
-| 3.6.0-v1.2-SNAPSHOT | Bumped to latest release of protobuf-java (see the branch [release/1.2.x](https://github.com/clojusc/protobuf/tree/release/1.2.x)), added byte and stream support in constructors, added benchmarking
-| 3.5.1-v1.1          | Added docs, more func renames, new abstraction layer, improved DevEx of API, and fix for enums as Clojure keywords
-| 3.5.1-v1.0          | Droped extra deps, renamed functions
-| 3.5.1-v0.3          | Bumped to latest release of protobuf-java, re-added tests, Travis CI support
-| 3.4.0-v0.2          | Transition release; identical to the ghaskins clojure-protobuf at version  3.4.0-2-SNAPSHOT
+| Version               | Notes
+|-----------------------|------------------------------------------------------
+| 1.0.0 (reset on fork) | Merged @mattyulrich, @cawasser and @fr33m0nk's changes
+| 3.6.0-v1.2-SNAPSHOT   | Bumped to latest release of protobuf-java (see the branch [release/1.2.x](https://github.com/clojusc/protobuf/tree/release/1.2.x)), added byte and stream support in constructors, added benchmarking
+| 3.5.1-v1.1            | Added docs, more func renames, new abstraction layer, improved DevEx of API, and fix for enums as Clojure keywords
+| 3.5.1-v1.0            | Droped extra deps, renamed functions
+| 3.5.1-v0.3            | Bumped to latest release of protobuf-java, re-added tests, Travis CI support
+| 3.4.0-v0.2            | Transition release; identical to the ghaskins clojure-protobuf at version  3.4.0-2-SNAPSHOT
 
 A note on the history: This project picked up the Clojure protobuf code base
 from the [ghaskins fork](https://github.com/ghaskins/clojure-protobuf); its

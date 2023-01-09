@@ -1,6 +1,6 @@
-(defproject clojusc/protobuf "3.6.1-v1.0-SNAPSHOT"
-  :description "A Clojure interface to Google's protocol buffers"
-  :url "https://github.com/clojusc/protobuf"
+(defproject olical/protobuf "1.0.0"
+  :description "A Clojure interface to Google's protocol buffers (fork merging some other forks)"
+  :url "https://github.com/Olical/protobuf"
   :license {
             :name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
