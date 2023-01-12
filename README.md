@@ -1,7 +1,5 @@
 # protobuf
 
-> Warning! This doesn't build! I might come back to it eventually but this fork is useless right now. The goal is to merge a bunch of forks together and publish their works on clojars so everyone can access their improvements. It's not there yet.
-
 [![Build Status][travis-badge]][travis][![Clojars Project][clojars-badge]][clojars][![Releases][tag-badge]][tag][![Clojure version][clojure-v]](project.clj)
 
 *A Clojure interface to Google's protocol buffers*
@@ -19,6 +17,8 @@
 * Release Notes
 * Donating
 
+See the Clojars page ([uk.me.oli/protobuf](https://clojars.org/uk.me.oli/protobuf)) for dependency information for this updated fork.
+
 ## About
 
 This project provides a Clojure interface to Google's
@@ -35,6 +35,7 @@ Changes in Protocol Buffer's "syntax3" require some changes in the library to co
 1. [mapdef.clj](src/clj/protobuf/impl/flatland/mapdef.clj) was failing at line 39 due to changes in the protobuf Java implementation. Specifically, messages are `Descriptors$FileDescriptor`, not the `Descriptors$Descriptor` required.
 2. Add additional persistent map behaviours
 3. Add support for default values
+4. Updated protobuf to 3.21.12 which helps with default values for enums and other values being returned from decode functions.
 
 
 ## Using Leiningen
