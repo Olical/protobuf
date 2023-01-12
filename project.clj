@@ -7,7 +7,7 @@
   :exclusions [
                [org.clojure/clojure]]
   :dependencies [
-                 [com.google.protobuf/protobuf-java "3.11.1"]
+                 [com.google.protobuf/protobuf-java "3.21.12"]
                  [gloss "0.2.6"]
                  [org.clojure/clojure "1.9.0"]
                  [org.flatland/io "0.3.0"]]
