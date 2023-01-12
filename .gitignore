@@ -14,3 +14,4 @@ protosrc
 .settings
 target/
 .nrepl*
+.cpcache/
