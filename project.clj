@@ -1,4 +1,4 @@
-(defproject olical/protobuf "1.0.0"
+(defproject uk.me.oli/protobuf "1.0.0"
   :description "A Clojure interface to Google's protocol buffers (fork merging some other forks)"
   :url "https://github.com/Olical/protobuf"
   :license {
