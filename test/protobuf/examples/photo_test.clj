@@ -30,4 +30,4 @@
 (deftest example-round-trip-test
   (let [p (protobuf/create Example$Photo data)
         b (protobuf/->bytes p)]
-    (= p (protobuf/bytes-> p b))))
+    (is (= p (protobuf/bytes-> p b)))))
