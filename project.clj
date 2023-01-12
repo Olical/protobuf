@@ -15,6 +15,8 @@
   :java-source-paths ["src/java"]
   :jvm-opts ["-Dprotobuf.impl=flatland"]
   :aot [protobuf.impl.flatland.core]
+  :deploy-repositories [["releases" :clojars]
+                        ["snapshots" :clojars]]
   :profiles {
              :ubercompile {
                            :aot :all}
