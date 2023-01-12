@@ -1,6 +1,6 @@
 # protobuf
 
-[![Build Status][travis-badge]][travis][![Clojars Project][clojars-badge]][clojars][![Releases][tag-badge]][tag][![Clojure version][clojure-v]](project.clj)
+[![Clojars Project][clojars-badge]][clojars]
 
 *A Clojure interface to Google's protocol buffers*
 
@@ -180,6 +180,8 @@ the org/artifact id.
 
 ## Donating
 
+> Olical: Leaving the original donation things here since all I've done is a bit of code gardening really, I'm not the author. I'm just curating other people's work and publishing it.
+
 At the [request of a user][donation-request], a donation account for project
 development has been set up on Liberapay here:
 
@@ -191,17 +193,10 @@ service's ["About" page][libera-about].
 
 <!-- Named page links below: /-->
 
-[travis]: https://travis-ci.org/clojusc/protobuf
-[travis-badge]: https://travis-ci.org/clojusc/protobuf.png?branch=master
-[deps]: http://jarkeeper.com/clojusc/protobuf
-[deps-badge]: http://jarkeeper.com/clojusc/protobuf/status.svg
 [logo]: ux-resources/images/google-protocol-buffer-small.png
 [logo-large]: ux-resources/images/google-protocol-buffer.png
-[tag-badge]: https://img.shields.io/github/tag/clojusc/protobuf.svg
-[tag]: https://github.com/clojusc/protobuf/tags
-[clojure-v]: https://img.shields.io/badge/clojure-1.8.0-blue.svg
-[clojars]: https://clojars.org/clojusc/protobuf
-[clojars-badge]: https://img.shields.io/clojars/v/clojusc/protobuf.svg
+[clojars]: https://clojars.org/uk.me.oli/protobuf
+[clojars-badge]: https://img.shields.io/clojars/v/uk.me.oli/protobuf.svg
 [docs]: https://clojusc.github.io/protobuf
 [donation-request]: https://github.com/clojusc/protobuf/issues/29
 [libera-wiki]: https://en.wikipedia.org/wiki/Liberapay
